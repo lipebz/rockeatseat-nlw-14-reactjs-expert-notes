@@ -20,7 +20,7 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # Expose the port the app runs in
-EXPOSE 3000
+EXPOSE 8080
 
 # Serve the app
 # CMD ["npm", "start"]

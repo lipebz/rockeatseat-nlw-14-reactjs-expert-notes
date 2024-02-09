@@ -86,7 +86,7 @@ export default ({ onNoteCreated }: NewNotecardProps) => {
         
         if (recognition !== null)
             recognition.stop()
-        
+
         setIsRecording(false)
 
     }
@@ -108,10 +108,10 @@ export default ({ onNoteCreated }: NewNotecardProps) => {
             </Dialog.Trigger>
 
             <Dialog.Portal>
-                <Dialog.Overlay className="fixed inset-0 bg-slate-800/60" />
-                <Dialog.Content className="fixed left-1/2 top-1/2 -translate-x-1/2 
-                -translate-y-1/2 max-w-[650px] w-full bg-slate-700 rounded-md flex 
-                flex-col outline-none h-[60vh]">
+                <Dialog.Overlay className="fixed inset-0 bg-black/50" />
+                <Dialog.Content className="fixed inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 
+                md:-translate-y-1/2 max-w-[650px] w-full bg-slate-700 md:rounded-md flex 
+                flex-col outline-none md:h-[60vh]">
                     <Dialog.Close className="absolute right-0 top-0 bg-slate-800 p-1.5 text-slate-400 hover:text-slate-100" onClick={handleCloseEditor}>
                         <X className="size-6" />
                     </Dialog.Close>

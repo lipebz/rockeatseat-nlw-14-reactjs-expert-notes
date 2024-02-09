@@ -20,9 +20,9 @@ export function App() {
 
       <div className="grid grid-cols-3 auto-rows-[250px] gap-6">
         <NewNoteCard />
-        <NoteCard note={{date: new Date, content: 'asdasd'}} />
-        <NoteCard note={{date: new Date, content: 'asdasd'}} />
-        <NoteCard note={{date: new Date, content: 'asdasd'}} />
+        <NoteCard note={{date: new Date, content: 'Hello World'}} />
+        <NoteCard note={{date: new Date, content: 'Teste 2'}} />
+        <NoteCard note={{date: new Date, content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit omnis quo aliquam explicabo ipsam ab molestias quidem excepturi velit nemo dignissimos mollitia animi eaque, pariatur recusandae earum veniam inventore reprehenderit.'}} />
         <NoteCard note={{date: new Date, content: 'asdasd'}} />
         <NoteCard note={{date: new Date, content: 'asdasd'}} />
         <NoteCard note={{date: new Date, content: 'asdasd'}} />

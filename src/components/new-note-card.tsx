@@ -3,7 +3,11 @@ import { X } from 'lucide-react'
 import { ChangeEvent, useState } from 'react'
 import { toast } from 'sonner'
 
-export default () => {
+interface NewNotecardProps {
+    onNoteCreated: (content: string) => void
+}
+
+export default ({ onNoteCreated }: NewNotecardProps) => {
     
     const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true)
     const [content, setContent] = useState('')
@@ -25,9 +29,12 @@ export default () => {
     function handleSaveNote (event: SubmitEvent<HTMLFormElement>) {
         event.preventDefault()
 
-        console.log(content)
-
+        onNoteCreated(content)
+        
         toast.success('Nota criada com sucesso')
+
+        setContent('')
+        setShouldShowOnboarding(true)
         
     }
 
@@ -68,7 +75,11 @@ export default () => {
                                     Comece <button className="font-medium text-lime-400 hover:underline">gravando uma nota</button> em áudio ou se preferir <button className="font-medium text-lime-400 hover:underline" onClick={handleStartEditor}>utilize apenas texto</button>.
                                 </p>
                             ) : (
-                                <textarea autoFocus className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none" onChange={handleContentChanged} />
+                                <textarea 
+                                    autoFocus 
+                                    className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none" 
+                                    onChange={handleContentChanged} 
+                                    value={content}/>
                             )}
                         </div>
                         <button 
